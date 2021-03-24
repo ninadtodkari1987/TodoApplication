@@ -1,10 +1,11 @@
-# Deloitte TODO Application
+# TODO Application
 
 ## How to start the application
-```mvn clean spring-boot:run```
+Run Application. java locally.
 
-## How to build a .WAR
-```mvn clean install```
+You can register with new user and it will login too.
 
-## Requirements:
+Then you can add, update, delete task.
+
+
 
