@@ -20,10 +20,6 @@ button {
     color: #337ab7;
 }
 
-button:hover {
-    text-decoration:underline
-}
-
 h2 {
 	text-align: center;
 }
@@ -31,7 +27,6 @@ h2 {
 body {
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.4em;
-    background: #eaeaea url('bg.png');
     color: #4d4d4d;
     width: 550px;
     margin: 0 auto;
@@ -40,54 +35,6 @@ body {
     -ms-font-smoothing: antialiased;
     -o-font-smoothing: antialiased;
     font-smoothing: antialiased;
-}
-
-#todoapp {
-    background: #fff;
-    background: rgba(255, 255, 255, 0.9);
-    margin: 130px 0 40px 0;
-    border: 1px solid #ccc;
-    position: relative;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.15);
-}
-
-#todoapp:before {
-    content: '';
-    border-left: 1px solid #f5d6d6;
-    border-right: 1px solid #f5d6d6;
-    width: 2px;
-    position: absolute;
-    top: 0;
-    left: 40px;
-    height: 100%;
-}
-
-#todoapp input::-webkit-input-placeholder {
-    font-style: italic;
-}
-
-#todoapp input:-moz-placeholder {
-    font-style: italic;
-    color: #a9a9a9;
-}
-
-#todoapp h1 {
-    position: absolute;
-    top: -120px;
-    width: 100%;
-    font-size: 70px;
-    font-weight: bold;
-    text-align: center;
-    color: #b3b3b3;
-    color: rgba(255, 255, 255, 0.3);
-    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    -ms-text-rendering: optimizeLegibility;
-    -o-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
 }
 
 #header {
@@ -269,8 +216,7 @@ label[for='toggle-all'] {
     text-decoration: line-through;
 }
 
-#todo-list li .destroy {
-    display: none;
+#todo-list li .delete {
     position: absolute;
     top: 0;
     right: 10px;
@@ -280,28 +226,13 @@ label[for='toggle-all'] {
     margin: auto 0;
     font-size: 22px;
     color: #a88a8a;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    -ms-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    transition: all 0.2s;
 }
 
-#todo-list li .destroy:hover {
-    text-shadow: 0 0 1px #000,
-                 0 0 10px rgba(199, 107, 107, 0.8);
-    -webkit-transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -ms-transform: scale(1.3);
-    -o-transform: scale(1.3);
-    transform: scale(1.3);
+#todo-list li .delete:after {
+    content: 'Delete Item';
 }
 
-#todo-list li .destroy:after {
-    content: '\2716';
-}
-
-#todo-list li:hover .destroy {
+#todo-list li:hover .delete {
     display: block;
 }
 
@@ -313,93 +244,7 @@ label[for='toggle-all'] {
     margin-bottom: -1px;
 }
 
-#footer {
-    color: #777;
-    padding: 0 15px;
-    position: absolute;
-    right: 0;
-    bottom: -31px;
-    left: 0;
-    height: 20px;
-    z-index: 1;
-    text-align: center;
-}
-
-#footer:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 31px;
-    left: 0;
-    height: 50px;
-    z-index: -1;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3),
-                0 6px 0 -3px rgba(255, 255, 255, 0.8),
-                0 7px 1px -3px rgba(0, 0, 0, 0.3),
-                0 43px 0 -6px rgba(255, 255, 255, 0.8),
-                0 44px 2px -6px rgba(0, 0, 0, 0.2);
-}
-
 #todo-count {
     float: left;
     text-align: left;
-}
-
-#filters {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    right: 0;
-    left: 0;
-}
-
-#filters li {
-    display: inline;
-}
-
-#filters li a {
-    color: #83756f;
-    margin: 2px;
-    text-decoration: none;
-}
-
-#filters li a.selected {
-    font-weight: bold;
-}
-
-#clear-completed {
-    float: right;
-    position: relative;
-    line-height: 20px;
-    text-decoration: none;
-    background: rgba(0, 0, 0, 0.1);
-    font-size: 11px;
-    padding: 0 10px;
-    border-radius: 3px;
-    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.2);
-}
-
-#clear-completed:hover {
-    background: rgba(0, 0, 0, 0.15);
-    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.3);
-}
-
-#info {
-    margin: 65px auto 0;
-    color: #a6a6a6;
-    font-size: 12px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-    text-align: center;
-}
-
-#info a {
-    color: inherit;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    #toggle-all,
-    #todo-list li .toggle {
-        background: none;
-    }
 }
